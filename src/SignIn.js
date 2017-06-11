@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
-import { auth, googleAuthProvider } from './firebase';
+import React, {Component} from 'react';
+import {auth, googleAuthProvider} from './firebase';
 
 class SignIn extends Component {
-  render() {
-    return (
-      <div className="SignIn">
-      </div>
-    );
-  }
+    onClickHandler() {
+        auth.signInWithPopup(googleAuthProvider);
+    }
+
+    render() {
+        return (
+            <div className="SignIn">
+                <button onClick={this.onClickHandler}>Sign In</button>
+            </div>
+        );
+    }
 }
 
 export default SignIn;
